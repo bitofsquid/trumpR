@@ -35,7 +35,7 @@ trump_ids <- t(trump_ids[1:5000])
 
 ##query twitter api for profile_location$ids using GET users/show in a while loop; 180 attribute limit
 
-
+place_holder <- 1
 loc_limit <- 180
 user_ids <- list(0)
 
@@ -46,15 +46,16 @@ repeat {
   while(count <= loc_limit) {
     user_loc <- content(GET(url = "https://api.twitter.com/1.1/users/show.json",
                             config(token = twitter_token),
-                            query = list(user_id = trump_ids[count])))
+                            query = list(user_id = trump_ids[place_holder])))
     
-    user_ids[[count]] <- user_loc$profile_location$id
+    user_ids[[place_holder]] <- user_loc$profile_location$id
     count <- count + 1
+    place_holder <- place_holder + 1
   }
   
-  if(length(user_ids) < 360) { ##actual condition: (id_limit - length(user_ids) > 140)
-    Sys.sleep(900)
-  } else {
+  Sys.sleep(905)
+  
+  if(length(user_ids) == 360) { ##actual condfition is == 140
     break
   }
 }
@@ -66,6 +67,7 @@ user_ids <- user_ids[!sapply(user_ids, is.null)]
 
 ##query twitter api to GET twitter geo ids and store longitudes and latitudes in objects
 
+place_holder2 <- 1
 geo_limit <- 15
 user_lon <- list(0)
 user_lat <- list(0)
@@ -77,20 +79,21 @@ repeat {
   while(count2 <= geo_limit) {
   
     user_geo <- content(GET(url = paste("https://api.twitter.com/1.1/geo/id/",
-                                        user_ids[count2],
+                                        user_ids[place_holder2],
                                         ".json",
                                         sep = ""),
                             config(token = twitter_token)))
   
-    user_lon[[count2]] <- user_geo$centroid[[1]]
-    user_lat[[count2]] <- user_geo$centroid[[2]]
+    user_lon[[place_holder2]] <- user_geo$centroid[[1]]
+    user_lat[[place_holder2]] <- user_geo$centroid[[2]]
   
     count2 <- count2 + 1
+    place_holder2 <- place_holder2 + 1
   }
   
-  if(length(user_lon) < length(user_ids)) {
-    Sys.sleep(900)
-  } else {
+  Sys.sleep(905)
+  
+  if(length(user_lon) == length(user_ids)) {
     break
   } 
 }  
@@ -115,5 +118,5 @@ ggplot() +
              aes(x = lon, y = lat, color = "dark green", alpha = .01), size = .05) +
   ggtitle("@realDonaldTrump Twitter Followers")
 
-##end project
 
+##end project
