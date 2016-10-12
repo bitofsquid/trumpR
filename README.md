@@ -1,11 +1,9 @@
 # trumpR
 
-I initiated this project after learning the basics of R on DataCamp (#rstats). I had always thought downloading data from Twitter would be interesting so gave it a shot. 
+I initiated this project after learning the basics of R on DataCamp (of whose service I am an avid fan). This represents my first foray into using R for actual data acquisition and visualization. A brief description of the steps I took to complete this project are below. 
 
-The project required creating a developer profile with Twitter directly and then registering an app to gain access to their API. This script doesn't use the likely more streamlined twitteR package by Jeff Gentry because I thought doing it on my own would be a better learning experience. 
+This project utilizes data from the Twitter REST API, which I accessed through an application I registered directly with Twitter. Although an R package exists (twitteR) that would have likely made my analysis a bit more straightforward, I felt working through some of the issues outside of the package would provide a better learning experience. 
 
-Many hours later, it was! The script is simple and probably rife with no-no's that veteran programmers would laugh at, but it represents my best efforts and does something I think is pretty cool. 
+The R script within this repo is fairly simple and likely does not follow certain coding best practices, however, it represents my best efforts to gather, format and display interesting data in a way that I was previously unfamiliar with. Please note that in its current form, the script will likely take more than 3 hours to fully execute.
 
-In sum, the script uses the httr package to query the Twitter API for a small subset of 2016 US presidential candidate Donald Trump's followers and plots their locations on a world map. Here is a glimpse at the final plot:
-
-Thanks for taking a look.
+In sum, the script uses the httr package to submit GET requests to the Twitter API for a random subset of 2016 US presidential candidate Donald Trump's Twitter followers and plots their locations on a world map. Here is a glimpse at the final plot:
