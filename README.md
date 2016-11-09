@@ -1,5 +1,7 @@
 # trumpR
 
+< This project is currently under construction as there appear to have been some changes to the Twitter API which is causing portions of the script to fail. Will update the project as time permits. > 
+
 I initiated this project after learning the basics of R on DataCamp (of whose service I am an avid fan). This represents my first foray into using R for actual data acquisition and visualization. A brief description of the steps I took to complete this project are below. 
 
 This project utilizes data from the Twitter REST API, which I accessed through an application I registered directly with Twitter. Although an R package exists (twitteR) that would have likely made my analysis a bit more straightforward, I felt working through some of the issues outside of the package would provide a better learning experience. 
