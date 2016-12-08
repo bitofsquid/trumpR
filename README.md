@@ -8,4 +8,4 @@ This project utilizes data from the Twitter REST API, which I accessed through a
 
 The R script within this repo is fairly simple and likely does not follow certain coding best practices, however, it represents my best efforts to gather, format and display interesting data in a way that I was previously unfamiliar with. Please note that in its current form, the script will likely take more than 3 hours to fully execute.
 
-In sum, the script uses the httr package to submit GET requests to the Twitter API for a random subset of 2016 US presidential candidate Donald Trump's Twitter followers and plots their locations on a world map. Here is a glimpse at the final plot:
+In sum, the script uses the httr package to submit GET requests to the Twitter API for a random subset of 2016 US presidential candidate Donald Trump's Twitter followers and plots their locations on a world map.
