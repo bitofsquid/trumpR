@@ -1,6 +1,6 @@
 # trumpR
 
-< This project is currently under construction as there appear to have been some changes to the Twitter API which is causing portions of the script to fail. Will update the project as time permits. > 
+** This project is currently under construction as there appear to have been some changes to the Twitter API which is causing portions of the script to fail. Will update the project as time permits. **
 
 I initiated this project after learning the basics of R on DataCamp (of whose service I am an avid fan). This represents my first foray into using R for actual data acquisition and visualization. A brief description of the steps I took to complete this project are below. 
 
