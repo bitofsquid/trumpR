@@ -8,8 +8,8 @@ library(maps)
 options(scipen = 999)
 
 ##setup twitter session authentication
-api_key <- "63Y8LnjXeHYFGa822ZdCPvc8f"
-api_secret <- "1ydAFosHshYHWDIJM3O2WdDhufy2UaUsXtqmw3etvkkS8eECqF"
+api_key <- "[YOUR KEY GOES HERE]"
+api_secret <- "[YOUR SECRET GOES HERE]"
 
 oauth_endpoints("twitter")
 
